@@ -12,7 +12,7 @@ type Approval = ContractClient.Event<{
   value: BigNumber, // The amount of tokens that were approved (the amount `allowed`).
 }>;
 type Burn = ContractClient.Event<{
-  address: Address, // The address that initiated the burn event.
+  address: Address, // The address from which the tokens were burned.
   amount: BigNumber, // The amount of tokens that were burned.
 }>;
 type LogSetAuthority = ContractClient.Event<{
@@ -22,7 +22,7 @@ type LogSetOwner = ContractClient.Event<{
   owner: Address, // The address that was assigned as the new owner.
 }>;
 type Mint = ContractClient.Event<{
-  address: Address, // The address that initiated the mint event.
+  address: Address, // The address to which the minted tokens were sent.
   amount: BigNumber, // The amount of tokens that were minted.
 }>;
 type Transfer = ContractClient.Event<{
@@ -57,6 +57,7 @@ export default class TokenClient extends ContractClient {
   */
   burn: TokenClient.Sender<
     {
+      user: Address, // The address from which to burn tokens.
       amount: BigNumber, // The amount of tokens that will be burned.
     },
     { Burn: Burn },
@@ -114,6 +115,7 @@ export default class TokenClient extends ContractClient {
   */
   mint: TokenClient.Sender<
     {
+      user: Address, // The address to send the minted tokens to
       amount: BigNumber, // The amount of tokens that will be minted.
     },
     { Mint: Mint },
@@ -127,6 +129,16 @@ export default class TokenClient extends ContractClient {
       authority: Address, // The address that will be assigned the `ADMIN` authority role.
     },
     { LogSetAuthority: LogSetAuthority },
+    TokenClient,
+  >;
+  /*
+  Set the `name` of a token contract. This function can only be called by the current `owner` of the contract. In order to call token contract methods from within a colony, the token `owner` must be the address of the colony contract.
+  */
+  setName: TokenClient.Sender<
+    {
+      name: string, // The new name for the token
+    },
+    {},
     TokenClient,
   >;
   /*
@@ -222,11 +234,15 @@ export default class TokenClient extends ContractClient {
     });
 
     this.addSender('mint', {
-      input: [amount],
+      input: [user, amount],
     });
 
     this.addSender('burn', {
-      input: [amount],
+      input: [user, amount],
+    });
+
+    this.addSender('setName', {
+      input: [['name', 'bytes32String']],
     });
 
     this.addSender('setOwner', {

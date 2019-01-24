@@ -1150,7 +1150,6 @@ export default class ColonyClient extends ContractClient {
     ]);
     this.addEvent('TaskFinalized', [['taskId', 'number']]);
     this.addEvent('TaskCanceled', [['taskId', 'number']]);
-    this.addEvent('ColonyTokenSet', [['token', 'tokenAddress']]);
     this.addEvent('ColonyInitialised', [['colonyNetwork', 'address']]);
     this.addEvent('ColonyUpgraded', [
       ['oldVersion', 'number'],

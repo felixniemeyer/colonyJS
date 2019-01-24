@@ -8,6 +8,11 @@
 * Add `bootstrapColony` sender and `ColonyBootstrapped` event to colony client (`@colony/colony-js-client`)
 * Add `[address]` and `[bigNumber]` param type and validation (`@colony/colony-js-contract-client`)
 
+**Maintenance**
+
+* `TokenClient` is now based on the `DSToken` contract, due to the removal of `ERC20ExtendedToken` (`@colony/colony-js-client`)
+* Removed `ColonyTokenSet` event (`@colony/colony-js-client`)
+
 ## v1.9.0
 
 **Bug fixes**

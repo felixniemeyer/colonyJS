@@ -474,7 +474,7 @@ An instance of a `ContractResponse` which will eventually receive the following 
 |rootSkillId|number|The numeric ID of the root skill.|
 |MetaColonyCreated|object|Contains the data defined in [MetaColonyCreated](#eventsmetacolonycreatedaddlistener-colonyaddress-tokenaddress-rootskillid-------)|
 
-### `createToken.send({ name, symbol, decimals }, options)`
+### `createToken.send({ symbol }, options)`
 
 Create a new ERC20 token contract.
 
@@ -482,9 +482,7 @@ Create a new ERC20 token contract.
 
 |Argument|Type|Description|
 |---|---|---|
-|name|string|The name of the token.|
 |symbol|string|The symbol of the token.|
-|decimals|number|The number of decimals.|
 
 **Returns**
 

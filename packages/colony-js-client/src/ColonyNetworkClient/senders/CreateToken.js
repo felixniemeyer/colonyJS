@@ -9,11 +9,10 @@ export default class CreateToken<
 > extends ContractClient.Sender<InputValues, OutputValues, Client> {
   constructor({
     name = 'createToken',
-    defaultValues = { decimals: 18 },
-    input = [['name', 'string'], ['symbol', 'string'], ['decimals', 'number']],
+    input = [['symbol', 'bytes32String']],
     ...props
   }: *) {
-    super({ name, defaultValues, input, ...props });
+    super({ name, input, ...props });
   }
 
   async estimate(inputValues: *) {
@@ -29,7 +28,7 @@ export default class CreateToken<
 
   async _getContractDeployTransaction(args: *) {
     return this.client.adapter.getContractDeployTransaction(
-      { contractName: 'Token' },
+      { contractName: 'DSToken' },
       args,
     );
   }

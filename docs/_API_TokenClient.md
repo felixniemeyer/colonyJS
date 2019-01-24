@@ -128,7 +128,7 @@ An instance of a `ContractResponse` which will eventually receive the following 
 |value|BigNumber|The amount of tokens that were approved (the amount `allowed`).|
 |Approval|object|Contains the data defined in [Approval](#eventsapprovaladdlistener-owner-spender-value-------)|
 
-### `burn.send({ amount }, options)`
+### `burn.send({ user, amount }, options)`
 
 Burn tokens. This is an `ERC20Extended` function that can only be called by the token `owner`. When a colony contract address is assigned as the token `owner`, this function can only be called by the user assigned the `FOUNDER` authority role.
 
@@ -136,6 +136,7 @@ Burn tokens. This is an `ERC20Extended` function that can only be called by the 
 
 |Argument|Type|Description|
 |---|---|---|
+|user|Address|The address from which to burn tokens.|
 |amount|BigNumber|The amount of tokens that will be burned.|
 
 **Returns**
@@ -144,11 +145,11 @@ An instance of a `ContractResponse` which will eventually receive the following 
 
 |Event data|Type|Description|
 |---|---|---|
-|address|Address|The address that initiated the burn event.|
+|address|Address|The address from which the tokens were burned.|
 |amount|BigNumber|The amount of tokens that were burned.|
 |Burn|object|Contains the data defined in [Burn](#eventsburnaddlistener-address-amount-------)|
 
-### `mint.send({ amount }, options)`
+### `mint.send({ user, amount }, options)`
 
 Mint new tokens. This is an `ERC20Extended` function that can only be called by the token `owner`. When a colony contract address is assigned as the token `owner`, this function can only be called by the user assigned the `FOUNDER` authority role.
 
@@ -156,6 +157,7 @@ Mint new tokens. This is an `ERC20Extended` function that can only be called by 
 
 |Argument|Type|Description|
 |---|---|---|
+|user|Address|The address to send the minted tokens to|
 |amount|BigNumber|The amount of tokens that will be minted.|
 
 **Returns**
@@ -164,7 +166,7 @@ An instance of a `ContractResponse` which will eventually receive the following 
 
 |Event data|Type|Description|
 |---|---|---|
-|address|Address|The address that initiated the mint event.|
+|address|Address|The address to which the minted tokens were sent.|
 |amount|BigNumber|The amount of tokens that were minted.|
 |Mint|object|Contains the data defined in [Mint](#eventsmintaddlistener-address-amount-------)|
 
@@ -186,6 +188,22 @@ An instance of a `ContractResponse` which will eventually receive the following 
 |---|---|---|
 |authority|Address|The address that was assigned an authority role.|
 |LogSetAuthority|object|Contains the data defined in [LogSetAuthority](#eventslogsetauthorityaddlistener-authority-------)|
+
+### `setName.send({ name }, options)`
+
+Set the `name` of a token contract. This function can only be called by the current `owner` of the contract. In order to call token contract methods from within a colony, the token `owner` must be the address of the colony contract.
+
+**Arguments**
+
+|Argument|Type|Description|
+|---|---|---|
+|name|string|The new name for the token|
+
+**Returns**
+
+An instance of a `ContractResponse`
+
+
 
 ### `setOwner.send({ owner }, options)`
 
@@ -274,7 +292,7 @@ Refer to the `ContractEvent` class [here](/colonyjs/docs-contractclient/#events)
 
 |Argument|Type|Description|
 |---|---|---|
-|address|Address|The address that initiated the burn event.|
+|address|Address|The address from which the tokens were burned.|
 |amount|BigNumber|The amount of tokens that were burned.|
 
 
@@ -308,7 +326,7 @@ Refer to the `ContractEvent` class [here](/colonyjs/docs-contractclient/#events)
 
 |Argument|Type|Description|
 |---|---|---|
-|address|Address|The address that initiated the mint event.|
+|address|Address|The address to which the minted tokens were sent.|
 |amount|BigNumber|The amount of tokens that were minted.|
 
 
