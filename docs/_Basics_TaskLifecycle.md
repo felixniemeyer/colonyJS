@@ -1,7 +1,7 @@
 ---
 title: Task Lifecycle
-section: Docs
-order: 3
+section: Basics
+order: 2
 ---
 
 The most useful abstraction within a colony is the task. Tasks are used to coordinate work and track reputation. They provide the only means to ultimately get paid through a colony. See [Tasks](/colonynetwork/docs-tasks/) as described in the colonyNetwork documentation for a complete description of what tasks are and how they function within a colony.

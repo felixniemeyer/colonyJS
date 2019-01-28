@@ -1,6 +1,6 @@
 ---
 title: ContractLoader
-section: API
+section: Architecture
 order: 0
 ---
 

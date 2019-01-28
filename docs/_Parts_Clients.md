@@ -1,7 +1,7 @@
 ---
 title: Clients
-section: Docs
-order: 8
+section: Parts
+order: 3
 ---
 
 Clients are aggregations of all the interactions possible with the [colonyNetwork](https://github.com/JoinColony/colonyNetwork) smart contracts that can be used to easily integrate Colony into your JavaScript application or service. Each client is a subclass of the `ContractClient` superclass (see [ContractClient](/colonyjs/api-contractclient) for more information).

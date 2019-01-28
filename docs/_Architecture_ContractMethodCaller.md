@@ -1,7 +1,7 @@
 ---
 title: ContractMethodCaller
-section: API
-order: 6
+section: Architecture
+order: 3
 ---
 
 The `ContractMethodCaller` (short `Caller`) class is a part of the `ContractClient` to passively interact with objects on the blockchain and doesn't produce transactions. They are usually created for a `ContractClient` class on its initialization (e.g. the [ColonyClient](/colonyjs/api-colonyclient)) and are associated with one single method on the smart contract.

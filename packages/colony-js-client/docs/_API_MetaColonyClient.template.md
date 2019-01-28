@@ -1,7 +1,7 @@
 ---
 title: MetaColonyClient
 section: API
-order: 5
+order: 2
 ---
 
 The `MetaColonyClient` class is a standard interface for interactions with the on-chain functions and events described in `IMetaColony.sol`.

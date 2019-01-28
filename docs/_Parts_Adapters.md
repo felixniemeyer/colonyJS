@@ -1,7 +1,7 @@
 ---
 title: Adapters
-section: Docs
-order: 7
+section: Parts
+order: 2
 ---
 
 Adapters represent the colonyJS solution for the many different ways to access the Ethereum blockchain provided by various JavaScript libraries. Adapters provide a wrapper for such libraries that enforces a standard and predictable API for use with the colonyNetwork smart contracts.

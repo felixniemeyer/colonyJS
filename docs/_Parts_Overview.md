@@ -1,6 +1,6 @@
 ---
 title: Overview
-section: Docs
+section: Parts
 order: 0
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: ContractClient
-section: API
+section: Architecture
 order: 1
 ---
 

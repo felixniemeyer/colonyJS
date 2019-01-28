@@ -1,7 +1,7 @@
 ---
 title: ColonyClient
 section: API
-order: 4
+order: 1
 ---
 
 The `ColonyClient` class is a standard interface for interactions with the on-chain functions and events described in `IColony.sol`

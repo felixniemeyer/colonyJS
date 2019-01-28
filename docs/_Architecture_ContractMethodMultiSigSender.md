@@ -1,7 +1,7 @@
 ---
 title: ContractMethodMultisigSender
-section: API
-order: 8
+section: Architecture
+order: 5
 ---
 
 The `ContractMethodMultisigSender` (short `MutlisigSender`) class is a part of the `ContractClient` to create Multisignature transactions. They are usually created for a `ContractClient` class on its initialization (e.g. the [ColonyClient](/colonyjs/api-colonyclient)) and are associated with a method on the smart contract which requires more than one signature to be executed.

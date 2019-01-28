@@ -1,7 +1,7 @@
 ---
 title: ContractMethodSender
-section: API
-order: 7
+section: Architecture
+order: 4
 ---
 
 The `ContractMethodSender` (short `Sender`) class is a part of the `ContractClient` to eventually create blockchain transactions. They are usually created for a `ContractClient` class on its initialization (e.g. the [ColonyClient](/colonyjs/api-colonyclient)) and are associated with one single method on the smart contract.

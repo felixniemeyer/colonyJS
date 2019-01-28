@@ -1,7 +1,7 @@
 ---
 title: Authority
-section: Docs
-order: 2
+section: Basics
+order: 1
 ---
 
 In the current implementation of the colonyNetwork smart contracts, some events on-chain are not mediated by reputation scores as described in the [Whitepaper](https://colony.io/whitepaper.pdf). For now, certain actions within a colony that would ordinarily require some minimum reputation are assigned an "authority role".

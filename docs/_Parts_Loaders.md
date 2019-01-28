@@ -1,7 +1,7 @@
 ---
 title: Loaders
-section: Docs
-order: 6
+section: Parts
+order: 1
 ---
 
 Loaders make it possible to easily access and load Ethereum smart contracts.

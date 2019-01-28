@@ -1,7 +1,7 @@
 ---
 title: Get Started
-section: Docs
-order: 1
+section: Basics
+order: 0
 ---
 
 Using the colonyJS library, you can query a given network for information about tasks, create new tasks, modify tasks, commit and reveal task ratings, and finalize tasks to trigger payouts -- all from within your application or service.

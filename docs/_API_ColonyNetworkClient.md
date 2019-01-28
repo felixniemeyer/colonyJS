@@ -1,7 +1,7 @@
 ---
 title: ColonyNetworkClient
 section: API
-order: 2
+order: 0
 ---
 
 The `ColonyNetworkClient` is a standard interface for interactions with functions and events described in `IColonyNetwork.sol`.
